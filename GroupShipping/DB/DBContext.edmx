@@ -1,0 +1,1619 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="GroupShippingModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="GroupShippingModelStoreContainer">
+    <EntitySet Name="Addresses" EntityType="GroupShippingModel.Store.Addresses" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Countries" EntityType="GroupShippingModel.Store.Countries" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Currencies" EntityType="GroupShippingModel.Store.Currencies" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Items" EntityType="GroupShippingModel.Store.Items" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ParcelItems" EntityType="GroupShippingModel.Store.ParcelItems" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Parcels" EntityType="GroupShippingModel.Store.Parcels" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PaymentModes" EntityType="GroupShippingModel.Store.PaymentModes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Payments" EntityType="GroupShippingModel.Store.Payments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Pictures" EntityType="GroupShippingModel.Store.Pictures" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ShipmentGroupMembers" EntityType="GroupShippingModel.Store.ShipmentGroupMembers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ShipmentGroupParcels" EntityType="GroupShippingModel.Store.ShipmentGroupParcels" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ShipmentGroups" EntityType="GroupShippingModel.Store.ShipmentGroups" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="GroupShippingModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="GroupShippingModel.Store.Users" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Addresses_Countries" Association="GroupShippingModel.Store.FK_Addresses_Countries">
+      <End Role="Countries" EntitySet="Countries" />
+      <End Role="Addresses" EntitySet="Addresses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShipmentGroupMembers_Addresses" Association="GroupShippingModel.Store.FK_ShipmentGroupMembers_Addresses">
+      <End Role="Addresses" EntitySet="Addresses" />
+      <End Role="ShipmentGroupMembers" EntitySet="ShipmentGroupMembers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShipmentGroups_Addresses" Association="GroupShippingModel.Store.FK_ShipmentGroups_Addresses">
+      <End Role="Addresses" EntitySet="Addresses" />
+      <End Role="ShipmentGroups" EntitySet="ShipmentGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShipmentGroups_Addresses1" Association="GroupShippingModel.Store.FK_ShipmentGroups_Addresses1">
+      <End Role="Addresses" EntitySet="Addresses" />
+      <End Role="ShipmentGroups" EntitySet="ShipmentGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Addresses" Association="GroupShippingModel.Store.FK_Users_Addresses">
+      <End Role="Addresses" EntitySet="Addresses" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Payments_Currencies" Association="GroupShippingModel.Store.FK_Payments_Currencies">
+      <End Role="Currencies" EntitySet="Currencies" />
+      <End Role="Payments" EntitySet="Payments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShipmentGroups_Currencies" Association="GroupShippingModel.Store.FK_ShipmentGroups_Currencies">
+      <End Role="Currencies" EntitySet="Currencies" />
+      <End Role="ShipmentGroups" EntitySet="ShipmentGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ParcelItems_Items" Association="GroupShippingModel.Store.FK_ParcelItems_Items">
+      <End Role="Items" EntitySet="Items" />
+      <End Role="ParcelItems" EntitySet="ParcelItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ParcelItems_Parcels" Association="GroupShippingModel.Store.FK_ParcelItems_Parcels">
+      <End Role="Parcels" EntitySet="Parcels" />
+      <End Role="ParcelItems" EntitySet="ParcelItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ParcelItems_Pictures" Association="GroupShippingModel.Store.FK_ParcelItems_Pictures">
+      <End Role="Pictures" EntitySet="Pictures" />
+      <End Role="ParcelItems" EntitySet="ParcelItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ParcelItems_Users" Association="GroupShippingModel.Store.FK_ParcelItems_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="ParcelItems" EntitySet="ParcelItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Parcels_Users" Association="GroupShippingModel.Store.FK_Parcels_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Parcels" EntitySet="Parcels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShipmentGroupMembers_Parcels" Association="GroupShippingModel.Store.FK_ShipmentGroupMembers_Parcels">
+      <End Role="Parcels" EntitySet="Parcels" />
+      <End Role="ShipmentGroupMembers" EntitySet="ShipmentGroupMembers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShipmentGroupParcels_Parcels" Association="GroupShippingModel.Store.FK_ShipmentGroupParcels_Parcels">
+      <End Role="Parcels" EntitySet="Parcels" />
+      <End Role="ShipmentGroupParcels" EntitySet="ShipmentGroupParcels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Payments_PaymentModes" Association="GroupShippingModel.Store.FK_Payments_PaymentModes">
+      <End Role="PaymentModes" EntitySet="PaymentModes" />
+      <End Role="Payments" EntitySet="Payments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Payments_ShipmentGroupMembers" Association="GroupShippingModel.Store.FK_Payments_ShipmentGroupMembers">
+      <End Role="ShipmentGroupMembers" EntitySet="ShipmentGroupMembers" />
+      <End Role="Payments" EntitySet="Payments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Payments_ShipmentGroups" Association="GroupShippingModel.Store.FK_Payments_ShipmentGroups">
+      <End Role="ShipmentGroups" EntitySet="ShipmentGroups" />
+      <End Role="Payments" EntitySet="Payments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Payments_Users" Association="GroupShippingModel.Store.FK_Payments_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Payments" EntitySet="Payments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Payments_Users1" Association="GroupShippingModel.Store.FK_Payments_Users1">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Payments" EntitySet="Payments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Pictures" Association="GroupShippingModel.Store.FK_Users_Pictures">
+      <End Role="Pictures" EntitySet="Pictures" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShipmentGroupMembers_ShipmentGroups" Association="GroupShippingModel.Store.FK_ShipmentGroupMembers_ShipmentGroups">
+      <End Role="ShipmentGroups" EntitySet="ShipmentGroups" />
+      <End Role="ShipmentGroupMembers" EntitySet="ShipmentGroupMembers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShipmentGroupMembers_Users" Association="GroupShippingModel.Store.FK_ShipmentGroupMembers_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="ShipmentGroupMembers" EntitySet="ShipmentGroupMembers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShipmentGroupParcels_ShipmentGroups" Association="GroupShippingModel.Store.FK_ShipmentGroupParcels_ShipmentGroups">
+      <End Role="ShipmentGroups" EntitySet="ShipmentGroups" />
+      <End Role="ShipmentGroupParcels" EntitySet="ShipmentGroupParcels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShipmentGroupParcels_Users" Association="GroupShippingModel.Store.FK_ShipmentGroupParcels_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="ShipmentGroupParcels" EntitySet="ShipmentGroupParcels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShipmentGroups_Users" Association="GroupShippingModel.Store.FK_ShipmentGroups_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="ShipmentGroups" EntitySet="ShipmentGroups" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Addresses">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContactPersonTitle" Type="nvarchar" Nullable="false" MaxLength="150" />
+    <Property Name="ContactPersonFirstName" Type="nvarchar" Nullable="false" MaxLength="150" />
+    <Property Name="ContactPersonSurname" Type="nvarchar" Nullable="true" MaxLength="150" />
+    <Property Name="EmailAddress" Type="nvarchar" Nullable="true" MaxLength="150" />
+    <Property Name="ContactNumber1" Type="nvarchar" Nullable="true" MaxLength="150" />
+    <Property Name="ContactNumber2" Type="nvarchar" Nullable="true" MaxLength="150" />
+    <Property Name="FaxNumber" Type="nvarchar" Nullable="true" MaxLength="150" />
+    <Property Name="AddressLine1" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="AddressLine2" Type="nvarchar" Nullable="true" MaxLength="500" />
+    <Property Name="AddressLine3" Type="nvarchar" Nullable="true" MaxLength="500" />
+    <Property Name="City" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="State" Type="nvarchar" Nullable="true" MaxLength="200" />
+    <Property Name="PostalCode" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="CountryID" Type="int" Nullable="false" />
+    <Property Name="Verified" Type="bit" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Countries">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Currencies">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="RateInNZD" Type="decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Items">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="ParcelItems">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ParcelID" Type="bigint" Nullable="false" />
+    <Property Name="MemberID" Type="bigint" Nullable="false" />
+    <Property Name="ItemID" Type="bigint" Nullable="false" />
+    <Property Name="Quantiy" Type="int" Nullable="false" />
+    <Property Name="Weight" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="PictureID" Type="bigint" Nullable="true" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Parcels">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MemberID" Type="bigint" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="PaymentModes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Payments">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ShipmentGroupMemberID" Type="bigint" Nullable="false" />
+    <Property Name="ShipmentGroupID" Type="bigint" Nullable="false" />
+    <Property Name="PayorID" Type="bigint" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="PaymentModeID" Type="int" Nullable="false" />
+    <Property Name="PaymentCurrencyID" Type="int" Nullable="false" />
+    <Property Name="ReceivedBy" Type="bigint" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Pictures">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContentType" Type="nvarchar" Nullable="true" MaxLength="250" />
+    <Property Name="Content" Type="varbinary(max)" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="ShipmentGroupMembers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MemberID" Type="bigint" Nullable="false" />
+    <Property Name="ShipmentGroupID" Type="bigint" Nullable="false" />
+    <Property Name="ParcelID" Type="bigint" Nullable="false" />
+    <Property Name="IsFacilitator" Type="bit" Nullable="true" />
+    <Property Name="DomesticAddressID" Type="bigint" Nullable="false" />
+    <Property Name="ConsentedOn" Type="datetime" Nullable="false" />
+    <Property Name="ShipmentReceivedAtOrigin" Type="datetime" Nullable="true" />
+    <Property Name="DispatchedDomestically" Type="datetime" Nullable="true" />
+    <Property Name="DomesticallyReceived" Type="datetime" Nullable="true" />
+    <Property Name="ShipmentWeight" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="InternationalShipmentCost" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="DomesticShipmentCost" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="FacilitationFee" Type="decimal" Nullable="true" Precision="19" Scale="4" />
+    <Property Name="AppServiceFee" Type="decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="TotalPayable" Type="decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="PayableReceived" Type="bit" Nullable="false" />
+    <Property Name="Completed" Type="datetime" Nullable="true" />
+    <Property Name="LastUpdatedOn" Type="datetime" Nullable="true" />
+    <Property Name="GoodToGo" Type="bit" Nullable="false" />
+    <Property Name="ShareDetailsWithMembers" Type="bit" Nullable="true" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="ShipmentGroupParcels">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ShipmentGroupID" Type="bigint" Nullable="false" />
+    <Property Name="MemberID" Type="bigint" Nullable="false" />
+    <Property Name="ParcelID" Type="bigint" Nullable="false" />
+    <Property Name="ReceivedAtOrigin" Type="datetime" Nullable="true" />
+    <Property Name="DispatchedAtDestination" Type="datetime" Nullable="true" />
+    <Property Name="DispatchedDomestically" Type="datetime" Nullable="true" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="ShipmentGroups">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FacilitatorID" Type="bigint" Nullable="false" />
+    <Property Name="OriginAddressID" Type="bigint" Nullable="false" />
+    <Property Name="DestinataionAddressID" Type="bigint" Nullable="false" />
+    <Property Name="MaximumMembers" Type="int" Nullable="false" />
+    <Property Name="MaximumWeight" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="TotalODShipmentCost" Type="decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="TotalSubShipmentCost" Type="decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="AverageDomesticShipmentCost" Type="decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="TotalGroupFacilitationFee" Type="decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="TotalAppServiceFee" Type="decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="AppServiceFeeReceived" Type="bit" Nullable="true" />
+    <Property Name="CurrencyID" Type="int" Nullable="false" />
+    <Property Name="MembersCompleted" Type="bit" Nullable="true" />
+    <Property Name="ParcelReceived" Type="datetime" Nullable="true" />
+    <Property Name="ExpectedDispatchTime" Type="datetime" Nullable="true" />
+    <Property Name="ParcelDispatched" Type="datetime" Nullable="true" />
+    <Property Name="ExpectedArrivalTime" Type="datetime" Nullable="true" />
+    <Property Name="ParcelArrived" Type="datetime" Nullable="true" />
+    <Property Name="Completed" Type="datetime" Nullable="true" />
+    <Property Name="LastUpdated" Type="datetime" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" Nullable="true" />
+    <Property Name="definition" Type="varbinary(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="400" />
+    <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="Surname" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="Gender" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="DateOfBirth" Type="datetime" Nullable="true" />
+    <Property Name="PictureID" Type="bigint" Nullable="true" />
+    <Property Name="AddressID" Type="bigint" Nullable="true" />
+    <Property Name="Subscribed" Type="bit" Nullable="false" />
+    <Property Name="Verified" Type="bit" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="datetime" Nullable="true" />
+  </EntityType>
+  <Association Name="FK_Addresses_Countries">
+    <End Role="Countries" Type="GroupShippingModel.Store.Countries" Multiplicity="1" />
+    <End Role="Addresses" Type="GroupShippingModel.Store.Addresses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Countries">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Addresses">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShipmentGroupMembers_Addresses">
+    <End Role="Addresses" Type="GroupShippingModel.Store.Addresses" Multiplicity="1" />
+    <End Role="ShipmentGroupMembers" Type="GroupShippingModel.Store.ShipmentGroupMembers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Addresses">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ShipmentGroupMembers">
+        <PropertyRef Name="DomesticAddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShipmentGroups_Addresses">
+    <End Role="Addresses" Type="GroupShippingModel.Store.Addresses" Multiplicity="1" />
+    <End Role="ShipmentGroups" Type="GroupShippingModel.Store.ShipmentGroups" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Addresses">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ShipmentGroups">
+        <PropertyRef Name="OriginAddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShipmentGroups_Addresses1">
+    <End Role="Addresses" Type="GroupShippingModel.Store.Addresses" Multiplicity="1" />
+    <End Role="ShipmentGroups" Type="GroupShippingModel.Store.ShipmentGroups" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Addresses">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ShipmentGroups">
+        <PropertyRef Name="DestinataionAddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Addresses">
+    <End Role="Addresses" Type="GroupShippingModel.Store.Addresses" Multiplicity="0..1" />
+    <End Role="Users" Type="GroupShippingModel.Store.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Addresses">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="AddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Payments_Currencies">
+    <End Role="Currencies" Type="GroupShippingModel.Store.Currencies" Multiplicity="1" />
+    <End Role="Payments" Type="GroupShippingModel.Store.Payments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Currencies">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Payments">
+        <PropertyRef Name="PaymentCurrencyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShipmentGroups_Currencies">
+    <End Role="Currencies" Type="GroupShippingModel.Store.Currencies" Multiplicity="1" />
+    <End Role="ShipmentGroups" Type="GroupShippingModel.Store.ShipmentGroups" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Currencies">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ShipmentGroups">
+        <PropertyRef Name="CurrencyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ParcelItems_Items">
+    <End Role="Items" Type="GroupShippingModel.Store.Items" Multiplicity="1" />
+    <End Role="ParcelItems" Type="GroupShippingModel.Store.ParcelItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Items">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ParcelItems">
+        <PropertyRef Name="ItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ParcelItems_Parcels">
+    <End Role="Parcels" Type="GroupShippingModel.Store.Parcels" Multiplicity="1" />
+    <End Role="ParcelItems" Type="GroupShippingModel.Store.ParcelItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Parcels">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ParcelItems">
+        <PropertyRef Name="ParcelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ParcelItems_Pictures">
+    <End Role="Pictures" Type="GroupShippingModel.Store.Pictures" Multiplicity="0..1" />
+    <End Role="ParcelItems" Type="GroupShippingModel.Store.ParcelItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pictures">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ParcelItems">
+        <PropertyRef Name="PictureID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ParcelItems_Users">
+    <End Role="Users" Type="GroupShippingModel.Store.Users" Multiplicity="1" />
+    <End Role="ParcelItems" Type="GroupShippingModel.Store.ParcelItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ParcelItems">
+        <PropertyRef Name="MemberID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Parcels_Users">
+    <End Role="Users" Type="GroupShippingModel.Store.Users" Multiplicity="1" />
+    <End Role="Parcels" Type="GroupShippingModel.Store.Parcels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Parcels">
+        <PropertyRef Name="MemberID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShipmentGroupMembers_Parcels">
+    <End Role="Parcels" Type="GroupShippingModel.Store.Parcels" Multiplicity="1" />
+    <End Role="ShipmentGroupMembers" Type="GroupShippingModel.Store.ShipmentGroupMembers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Parcels">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ShipmentGroupMembers">
+        <PropertyRef Name="ParcelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShipmentGroupParcels_Parcels">
+    <End Role="Parcels" Type="GroupShippingModel.Store.Parcels" Multiplicity="1" />
+    <End Role="ShipmentGroupParcels" Type="GroupShippingModel.Store.ShipmentGroupParcels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Parcels">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ShipmentGroupParcels">
+        <PropertyRef Name="ParcelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Payments_PaymentModes">
+    <End Role="PaymentModes" Type="GroupShippingModel.Store.PaymentModes" Multiplicity="1" />
+    <End Role="Payments" Type="GroupShippingModel.Store.Payments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PaymentModes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Payments">
+        <PropertyRef Name="PaymentModeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Payments_ShipmentGroupMembers">
+    <End Role="ShipmentGroupMembers" Type="GroupShippingModel.Store.ShipmentGroupMembers" Multiplicity="1" />
+    <End Role="Payments" Type="GroupShippingModel.Store.Payments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ShipmentGroupMembers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Payments">
+        <PropertyRef Name="ShipmentGroupMemberID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Payments_ShipmentGroups">
+    <End Role="ShipmentGroups" Type="GroupShippingModel.Store.ShipmentGroups" Multiplicity="1" />
+    <End Role="Payments" Type="GroupShippingModel.Store.Payments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ShipmentGroups">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Payments">
+        <PropertyRef Name="ShipmentGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Payments_Users">
+    <End Role="Users" Type="GroupShippingModel.Store.Users" Multiplicity="1" />
+    <End Role="Payments" Type="GroupShippingModel.Store.Payments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Payments">
+        <PropertyRef Name="PayorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Payments_Users1">
+    <End Role="Users" Type="GroupShippingModel.Store.Users" Multiplicity="1" />
+    <End Role="Payments" Type="GroupShippingModel.Store.Payments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Payments">
+        <PropertyRef Name="ReceivedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Pictures">
+    <End Role="Pictures" Type="GroupShippingModel.Store.Pictures" Multiplicity="0..1" />
+    <End Role="Users" Type="GroupShippingModel.Store.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pictures">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="PictureID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShipmentGroupMembers_ShipmentGroups">
+    <End Role="ShipmentGroups" Type="GroupShippingModel.Store.ShipmentGroups" Multiplicity="1" />
+    <End Role="ShipmentGroupMembers" Type="GroupShippingModel.Store.ShipmentGroupMembers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ShipmentGroups">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ShipmentGroupMembers">
+        <PropertyRef Name="ShipmentGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShipmentGroupMembers_Users">
+    <End Role="Users" Type="GroupShippingModel.Store.Users" Multiplicity="1" />
+    <End Role="ShipmentGroupMembers" Type="GroupShippingModel.Store.ShipmentGroupMembers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ShipmentGroupMembers">
+        <PropertyRef Name="MemberID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShipmentGroupParcels_ShipmentGroups">
+    <End Role="ShipmentGroups" Type="GroupShippingModel.Store.ShipmentGroups" Multiplicity="1" />
+    <End Role="ShipmentGroupParcels" Type="GroupShippingModel.Store.ShipmentGroupParcels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ShipmentGroups">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ShipmentGroupParcels">
+        <PropertyRef Name="ShipmentGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShipmentGroupParcels_Users">
+    <End Role="Users" Type="GroupShippingModel.Store.Users" Multiplicity="1" />
+    <End Role="ShipmentGroupParcels" Type="GroupShippingModel.Store.ShipmentGroupParcels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ShipmentGroupParcels">
+        <PropertyRef Name="MemberID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShipmentGroups_Users">
+    <End Role="Users" Type="GroupShippingModel.Store.Users" Multiplicity="1" />
+    <End Role="ShipmentGroups" Type="GroupShippingModel.Store.ShipmentGroups" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ShipmentGroups">
+        <PropertyRef Name="FacilitatorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GroupShippingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ContactPersonTitle" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContactPersonFirstName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContactPersonSurname" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="EmailAddress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ContactNumber1" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ContactNumber2" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FaxNumber" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="AddressLine1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AddressLine2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="AddressLine3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="State" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PostalCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CountryID" Type="Int32" Nullable="false" />
+          <Property Name="Verified" Type="Boolean" Nullable="false" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Deleted" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="Country" Relationship="Self.FK_Addresses_Countries" FromRole="Addresses" ToRole="Countries" />
+          <NavigationProperty Name="ShipmentGroupMembers" Relationship="Self.FK_ShipmentGroupMembers_Addresses" FromRole="Addresses" ToRole="ShipmentGroupMembers" />
+          <NavigationProperty Name="ShipmentGroups" Relationship="Self.FK_ShipmentGroups_Addresses" FromRole="Addresses" ToRole="ShipmentGroups" />
+          <NavigationProperty Name="ShipmentGroups1" Relationship="Self.FK_ShipmentGroups_Addresses1" FromRole="Addresses" ToRole="ShipmentGroups" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_Users_Addresses" FromRole="Addresses" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Deleted" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="Addresses" Relationship="Self.FK_Addresses_Countries" FromRole="Countries" ToRole="Addresses" />
+        </EntityType>
+        <EntityType Name="Currency">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RateInNZD" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Deleted" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="Payments" Relationship="Self.FK_Payments_Currencies" FromRole="Currencies" ToRole="Payments" />
+          <NavigationProperty Name="ShipmentGroups" Relationship="Self.FK_ShipmentGroups_Currencies" FromRole="Currencies" ToRole="ShipmentGroups" />
+        </EntityType>
+        <EntityType Name="Item">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Deleted" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="ParcelItems" Relationship="Self.FK_ParcelItems_Items" FromRole="Items" ToRole="ParcelItems" />
+        </EntityType>
+        <EntityType Name="ParcelItem">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ParcelID" Type="Int64" Nullable="false" />
+          <Property Name="MemberID" Type="Int64" Nullable="false" />
+          <Property Name="ItemID" Type="Int64" Nullable="false" />
+          <Property Name="Quantiy" Type="Int32" Nullable="false" />
+          <Property Name="Weight" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PictureID" Type="Int64" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Deleted" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="Item" Relationship="Self.FK_ParcelItems_Items" FromRole="ParcelItems" ToRole="Items" />
+          <NavigationProperty Name="Parcel" Relationship="Self.FK_ParcelItems_Parcels" FromRole="ParcelItems" ToRole="Parcels" />
+          <NavigationProperty Name="Picture" Relationship="Self.FK_ParcelItems_Pictures" FromRole="ParcelItems" ToRole="Pictures" />
+          <NavigationProperty Name="User" Relationship="Self.FK_ParcelItems_Users" FromRole="ParcelItems" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Parcel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MemberID" Type="Int64" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Deleted" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="ParcelItems" Relationship="Self.FK_ParcelItems_Parcels" FromRole="Parcels" ToRole="ParcelItems" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Parcels_Users" FromRole="Parcels" ToRole="Users" />
+          <NavigationProperty Name="ShipmentGroupMembers" Relationship="Self.FK_ShipmentGroupMembers_Parcels" FromRole="Parcels" ToRole="ShipmentGroupMembers" />
+          <NavigationProperty Name="ShipmentGroupParcels" Relationship="Self.FK_ShipmentGroupParcels_Parcels" FromRole="Parcels" ToRole="ShipmentGroupParcels" />
+        </EntityType>
+        <EntityType Name="PaymentMode">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Deleted" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="Payments" Relationship="Self.FK_Payments_PaymentModes" FromRole="PaymentModes" ToRole="Payments" />
+        </EntityType>
+        <EntityType Name="Payment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ShipmentGroupMemberID" Type="Int64" Nullable="false" />
+          <Property Name="ShipmentGroupID" Type="Int64" Nullable="false" />
+          <Property Name="PayorID" Type="Int64" Nullable="false" />
+          <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="PaymentModeID" Type="Int32" Nullable="false" />
+          <Property Name="PaymentCurrencyID" Type="Int32" Nullable="false" />
+          <Property Name="ReceivedBy" Type="Int64" Nullable="false" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Deleted" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="Currency" Relationship="Self.FK_Payments_Currencies" FromRole="Payments" ToRole="Currencies" />
+          <NavigationProperty Name="PaymentMode" Relationship="Self.FK_Payments_PaymentModes" FromRole="Payments" ToRole="PaymentModes" />
+          <NavigationProperty Name="ShipmentGroupMember" Relationship="Self.FK_Payments_ShipmentGroupMembers" FromRole="Payments" ToRole="ShipmentGroupMembers" />
+          <NavigationProperty Name="ShipmentGroup" Relationship="Self.FK_Payments_ShipmentGroups" FromRole="Payments" ToRole="ShipmentGroups" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Payments_Users" FromRole="Payments" ToRole="Users" />
+          <NavigationProperty Name="User1" Relationship="Self.FK_Payments_Users1" FromRole="Payments" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Picture">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ContentType" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Content" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Deleted" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="ParcelItems" Relationship="Self.FK_ParcelItems_Pictures" FromRole="Pictures" ToRole="ParcelItems" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_Users_Pictures" FromRole="Pictures" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="ShipmentGroupMember">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MemberID" Type="Int64" Nullable="false" />
+          <Property Name="ShipmentGroupID" Type="Int64" Nullable="false" />
+          <Property Name="ParcelID" Type="Int64" Nullable="false" />
+          <Property Name="IsFacilitator" Type="Boolean" />
+          <Property Name="DomesticAddressID" Type="Int64" Nullable="false" />
+          <Property Name="ConsentedOn" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="ShipmentReceivedAtOrigin" Type="DateTime" Precision="7" />
+          <Property Name="DispatchedDomestically" Type="DateTime" Precision="7" />
+          <Property Name="DomesticallyReceived" Type="DateTime" Precision="7" />
+          <Property Name="ShipmentWeight" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="InternationalShipmentCost" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="DomesticShipmentCost" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="FacilitationFee" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="AppServiceFee" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="TotalPayable" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="PayableReceived" Type="Boolean" Nullable="false" />
+          <Property Name="Completed" Type="DateTime" Precision="7" />
+          <Property Name="LastUpdatedOn" Type="DateTime" Precision="7" />
+          <Property Name="GoodToGo" Type="Boolean" Nullable="false" />
+          <Property Name="ShareDetailsWithMembers" Type="Boolean" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Deleted" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="Address" Relationship="Self.FK_ShipmentGroupMembers_Addresses" FromRole="ShipmentGroupMembers" ToRole="Addresses" />
+          <NavigationProperty Name="Parcel" Relationship="Self.FK_ShipmentGroupMembers_Parcels" FromRole="ShipmentGroupMembers" ToRole="Parcels" />
+          <NavigationProperty Name="Payments" Relationship="Self.FK_Payments_ShipmentGroupMembers" FromRole="ShipmentGroupMembers" ToRole="Payments" />
+          <NavigationProperty Name="ShipmentGroup" Relationship="Self.FK_ShipmentGroupMembers_ShipmentGroups" FromRole="ShipmentGroupMembers" ToRole="ShipmentGroups" />
+          <NavigationProperty Name="User" Relationship="Self.FK_ShipmentGroupMembers_Users" FromRole="ShipmentGroupMembers" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="ShipmentGroupParcel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ShipmentGroupID" Type="Int64" Nullable="false" />
+          <Property Name="MemberID" Type="Int64" Nullable="false" />
+          <Property Name="ParcelID" Type="Int64" Nullable="false" />
+          <Property Name="ReceivedAtOrigin" Type="DateTime" Precision="7" />
+          <Property Name="DispatchedAtDestination" Type="DateTime" Precision="7" />
+          <Property Name="DispatchedDomestically" Type="DateTime" Precision="7" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Deleted" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="Parcel" Relationship="Self.FK_ShipmentGroupParcels_Parcels" FromRole="ShipmentGroupParcels" ToRole="Parcels" />
+          <NavigationProperty Name="ShipmentGroup" Relationship="Self.FK_ShipmentGroupParcels_ShipmentGroups" FromRole="ShipmentGroupParcels" ToRole="ShipmentGroups" />
+          <NavigationProperty Name="User" Relationship="Self.FK_ShipmentGroupParcels_Users" FromRole="ShipmentGroupParcels" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="ShipmentGroup">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FacilitatorID" Type="Int64" Nullable="false" />
+          <Property Name="OriginAddressID" Type="Int64" Nullable="false" />
+          <Property Name="DestinataionAddressID" Type="Int64" Nullable="false" />
+          <Property Name="MaximumMembers" Type="Int32" Nullable="false" />
+          <Property Name="MaximumWeight" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="TotalODShipmentCost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="TotalSubShipmentCost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="AverageDomesticShipmentCost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="TotalGroupFacilitationFee" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="TotalAppServiceFee" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="AppServiceFeeReceived" Type="Boolean" />
+          <Property Name="CurrencyID" Type="Int32" Nullable="false" />
+          <Property Name="MembersCompleted" Type="Boolean" />
+          <Property Name="ParcelReceived" Type="DateTime" Precision="7" />
+          <Property Name="ExpectedDispatchTime" Type="DateTime" Precision="7" />
+          <Property Name="ParcelDispatched" Type="DateTime" Precision="7" />
+          <Property Name="ExpectedArrivalTime" Type="DateTime" Precision="7" />
+          <Property Name="ParcelArrived" Type="DateTime" Precision="7" />
+          <Property Name="Completed" Type="DateTime" Precision="7" />
+          <Property Name="LastUpdated" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Deleted" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="Address" Relationship="Self.FK_ShipmentGroups_Addresses" FromRole="ShipmentGroups" ToRole="Addresses" />
+          <NavigationProperty Name="Address1" Relationship="Self.FK_ShipmentGroups_Addresses1" FromRole="ShipmentGroups" ToRole="Addresses" />
+          <NavigationProperty Name="Currency" Relationship="Self.FK_ShipmentGroups_Currencies" FromRole="ShipmentGroups" ToRole="Currencies" />
+          <NavigationProperty Name="Payments" Relationship="Self.FK_Payments_ShipmentGroups" FromRole="ShipmentGroups" ToRole="Payments" />
+          <NavigationProperty Name="ShipmentGroupMembers" Relationship="Self.FK_ShipmentGroupMembers_ShipmentGroups" FromRole="ShipmentGroups" ToRole="ShipmentGroupMembers" />
+          <NavigationProperty Name="ShipmentGroupParcels" Relationship="Self.FK_ShipmentGroupParcels_ShipmentGroups" FromRole="ShipmentGroups" ToRole="ShipmentGroupParcels" />
+          <NavigationProperty Name="User" Relationship="Self.FK_ShipmentGroups_Users" FromRole="ShipmentGroups" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="400" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Surname" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Gender" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="7" />
+          <Property Name="PictureID" Type="Int64" />
+          <Property Name="AddressID" Type="Int64" />
+          <Property Name="Subscribed" Type="Boolean" Nullable="false" />
+          <Property Name="Verified" Type="Boolean" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Deleted" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="Address" Relationship="Self.FK_Users_Addresses" FromRole="Users" ToRole="Addresses" />
+          <NavigationProperty Name="ParcelItems" Relationship="Self.FK_ParcelItems_Users" FromRole="Users" ToRole="ParcelItems" />
+          <NavigationProperty Name="Parcels" Relationship="Self.FK_Parcels_Users" FromRole="Users" ToRole="Parcels" />
+          <NavigationProperty Name="Payments" Relationship="Self.FK_Payments_Users" FromRole="Users" ToRole="Payments" />
+          <NavigationProperty Name="Payments1" Relationship="Self.FK_Payments_Users1" FromRole="Users" ToRole="Payments" />
+          <NavigationProperty Name="Picture" Relationship="Self.FK_Users_Pictures" FromRole="Users" ToRole="Pictures" />
+          <NavigationProperty Name="ShipmentGroupMembers" Relationship="Self.FK_ShipmentGroupMembers_Users" FromRole="Users" ToRole="ShipmentGroupMembers" />
+          <NavigationProperty Name="ShipmentGroupParcels" Relationship="Self.FK_ShipmentGroupParcels_Users" FromRole="Users" ToRole="ShipmentGroupParcels" />
+          <NavigationProperty Name="ShipmentGroups" Relationship="Self.FK_ShipmentGroups_Users" FromRole="Users" ToRole="ShipmentGroups" />
+        </EntityType>
+        <Association Name="FK_Addresses_Countries">
+          <End Role="Countries" Type="Self.Country" Multiplicity="1" />
+          <End Role="Addresses" Type="Self.Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Countries">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Addresses">
+              <PropertyRef Name="CountryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShipmentGroupMembers_Addresses">
+          <End Role="Addresses" Type="Self.Address" Multiplicity="1" />
+          <End Role="ShipmentGroupMembers" Type="Self.ShipmentGroupMember" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Addresses">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ShipmentGroupMembers">
+              <PropertyRef Name="DomesticAddressID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShipmentGroups_Addresses">
+          <End Role="Addresses" Type="Self.Address" Multiplicity="1" />
+          <End Role="ShipmentGroups" Type="Self.ShipmentGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Addresses">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ShipmentGroups">
+              <PropertyRef Name="OriginAddressID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShipmentGroups_Addresses1">
+          <End Role="Addresses" Type="Self.Address" Multiplicity="1" />
+          <End Role="ShipmentGroups" Type="Self.ShipmentGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Addresses">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ShipmentGroups">
+              <PropertyRef Name="DestinataionAddressID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_Addresses">
+          <End Role="Addresses" Type="Self.Address" Multiplicity="0..1" />
+          <End Role="Users" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Addresses">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="AddressID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payments_Currencies">
+          <End Role="Currencies" Type="Self.Currency" Multiplicity="1" />
+          <End Role="Payments" Type="Self.Payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Currencies">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Payments">
+              <PropertyRef Name="PaymentCurrencyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShipmentGroups_Currencies">
+          <End Role="Currencies" Type="Self.Currency" Multiplicity="1" />
+          <End Role="ShipmentGroups" Type="Self.ShipmentGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Currencies">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ShipmentGroups">
+              <PropertyRef Name="CurrencyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ParcelItems_Items">
+          <End Role="Items" Type="Self.Item" Multiplicity="1" />
+          <End Role="ParcelItems" Type="Self.ParcelItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Items">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ParcelItems">
+              <PropertyRef Name="ItemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ParcelItems_Parcels">
+          <End Role="Parcels" Type="Self.Parcel" Multiplicity="1" />
+          <End Role="ParcelItems" Type="Self.ParcelItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Parcels">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ParcelItems">
+              <PropertyRef Name="ParcelID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ParcelItems_Pictures">
+          <End Role="Pictures" Type="Self.Picture" Multiplicity="0..1" />
+          <End Role="ParcelItems" Type="Self.ParcelItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pictures">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ParcelItems">
+              <PropertyRef Name="PictureID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ParcelItems_Users">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="ParcelItems" Type="Self.ParcelItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ParcelItems">
+              <PropertyRef Name="MemberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Parcels_Users">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="Parcels" Type="Self.Parcel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Parcels">
+              <PropertyRef Name="MemberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShipmentGroupMembers_Parcels">
+          <End Role="Parcels" Type="Self.Parcel" Multiplicity="1" />
+          <End Role="ShipmentGroupMembers" Type="Self.ShipmentGroupMember" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Parcels">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ShipmentGroupMembers">
+              <PropertyRef Name="ParcelID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShipmentGroupParcels_Parcels">
+          <End Role="Parcels" Type="Self.Parcel" Multiplicity="1" />
+          <End Role="ShipmentGroupParcels" Type="Self.ShipmentGroupParcel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Parcels">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ShipmentGroupParcels">
+              <PropertyRef Name="ParcelID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payments_PaymentModes">
+          <End Role="PaymentModes" Type="Self.PaymentMode" Multiplicity="1" />
+          <End Role="Payments" Type="Self.Payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaymentModes">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Payments">
+              <PropertyRef Name="PaymentModeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payments_ShipmentGroupMembers">
+          <End Role="ShipmentGroupMembers" Type="Self.ShipmentGroupMember" Multiplicity="1" />
+          <End Role="Payments" Type="Self.Payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShipmentGroupMembers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Payments">
+              <PropertyRef Name="ShipmentGroupMemberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payments_ShipmentGroups">
+          <End Role="ShipmentGroups" Type="Self.ShipmentGroup" Multiplicity="1" />
+          <End Role="Payments" Type="Self.Payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShipmentGroups">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Payments">
+              <PropertyRef Name="ShipmentGroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payments_Users">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="Payments" Type="Self.Payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Payments">
+              <PropertyRef Name="PayorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payments_Users1">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="Payments" Type="Self.Payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Payments">
+              <PropertyRef Name="ReceivedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_Pictures">
+          <End Role="Pictures" Type="Self.Picture" Multiplicity="0..1" />
+          <End Role="Users" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pictures">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="PictureID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShipmentGroupMembers_ShipmentGroups">
+          <End Role="ShipmentGroups" Type="Self.ShipmentGroup" Multiplicity="1" />
+          <End Role="ShipmentGroupMembers" Type="Self.ShipmentGroupMember" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShipmentGroups">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ShipmentGroupMembers">
+              <PropertyRef Name="ShipmentGroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShipmentGroupMembers_Users">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="ShipmentGroupMembers" Type="Self.ShipmentGroupMember" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ShipmentGroupMembers">
+              <PropertyRef Name="MemberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShipmentGroupParcels_ShipmentGroups">
+          <End Role="ShipmentGroups" Type="Self.ShipmentGroup" Multiplicity="1" />
+          <End Role="ShipmentGroupParcels" Type="Self.ShipmentGroupParcel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShipmentGroups">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ShipmentGroupParcels">
+              <PropertyRef Name="ShipmentGroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShipmentGroupParcels_Users">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="ShipmentGroupParcels" Type="Self.ShipmentGroupParcel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ShipmentGroupParcels">
+              <PropertyRef Name="MemberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShipmentGroups_Users">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="ShipmentGroups" Type="Self.ShipmentGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ShipmentGroups">
+              <PropertyRef Name="FacilitatorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GroupShippingEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Addresses" EntityType="Self.Address" />
+          <EntitySet Name="Countries" EntityType="Self.Country" />
+          <EntitySet Name="Currencies" EntityType="Self.Currency" />
+          <EntitySet Name="Items" EntityType="Self.Item" />
+          <EntitySet Name="ParcelItems" EntityType="Self.ParcelItem" />
+          <EntitySet Name="Parcels" EntityType="Self.Parcel" />
+          <EntitySet Name="PaymentModes" EntityType="Self.PaymentMode" />
+          <EntitySet Name="Payments" EntityType="Self.Payment" />
+          <EntitySet Name="Pictures" EntityType="Self.Picture" />
+          <EntitySet Name="ShipmentGroupMembers" EntityType="Self.ShipmentGroupMember" />
+          <EntitySet Name="ShipmentGroupParcels" EntityType="Self.ShipmentGroupParcel" />
+          <EntitySet Name="ShipmentGroups" EntityType="Self.ShipmentGroup" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <AssociationSet Name="FK_Addresses_Countries" Association="Self.FK_Addresses_Countries">
+            <End Role="Countries" EntitySet="Countries" />
+            <End Role="Addresses" EntitySet="Addresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShipmentGroupMembers_Addresses" Association="Self.FK_ShipmentGroupMembers_Addresses">
+            <End Role="Addresses" EntitySet="Addresses" />
+            <End Role="ShipmentGroupMembers" EntitySet="ShipmentGroupMembers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShipmentGroups_Addresses" Association="Self.FK_ShipmentGroups_Addresses">
+            <End Role="Addresses" EntitySet="Addresses" />
+            <End Role="ShipmentGroups" EntitySet="ShipmentGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShipmentGroups_Addresses1" Association="Self.FK_ShipmentGroups_Addresses1">
+            <End Role="Addresses" EntitySet="Addresses" />
+            <End Role="ShipmentGroups" EntitySet="ShipmentGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_Addresses" Association="Self.FK_Users_Addresses">
+            <End Role="Addresses" EntitySet="Addresses" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payments_Currencies" Association="Self.FK_Payments_Currencies">
+            <End Role="Currencies" EntitySet="Currencies" />
+            <End Role="Payments" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShipmentGroups_Currencies" Association="Self.FK_ShipmentGroups_Currencies">
+            <End Role="Currencies" EntitySet="Currencies" />
+            <End Role="ShipmentGroups" EntitySet="ShipmentGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ParcelItems_Items" Association="Self.FK_ParcelItems_Items">
+            <End Role="Items" EntitySet="Items" />
+            <End Role="ParcelItems" EntitySet="ParcelItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ParcelItems_Parcels" Association="Self.FK_ParcelItems_Parcels">
+            <End Role="Parcels" EntitySet="Parcels" />
+            <End Role="ParcelItems" EntitySet="ParcelItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ParcelItems_Pictures" Association="Self.FK_ParcelItems_Pictures">
+            <End Role="Pictures" EntitySet="Pictures" />
+            <End Role="ParcelItems" EntitySet="ParcelItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ParcelItems_Users" Association="Self.FK_ParcelItems_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="ParcelItems" EntitySet="ParcelItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Parcels_Users" Association="Self.FK_Parcels_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Parcels" EntitySet="Parcels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShipmentGroupMembers_Parcels" Association="Self.FK_ShipmentGroupMembers_Parcels">
+            <End Role="Parcels" EntitySet="Parcels" />
+            <End Role="ShipmentGroupMembers" EntitySet="ShipmentGroupMembers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShipmentGroupParcels_Parcels" Association="Self.FK_ShipmentGroupParcels_Parcels">
+            <End Role="Parcels" EntitySet="Parcels" />
+            <End Role="ShipmentGroupParcels" EntitySet="ShipmentGroupParcels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payments_PaymentModes" Association="Self.FK_Payments_PaymentModes">
+            <End Role="PaymentModes" EntitySet="PaymentModes" />
+            <End Role="Payments" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payments_ShipmentGroupMembers" Association="Self.FK_Payments_ShipmentGroupMembers">
+            <End Role="ShipmentGroupMembers" EntitySet="ShipmentGroupMembers" />
+            <End Role="Payments" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payments_ShipmentGroups" Association="Self.FK_Payments_ShipmentGroups">
+            <End Role="ShipmentGroups" EntitySet="ShipmentGroups" />
+            <End Role="Payments" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payments_Users" Association="Self.FK_Payments_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Payments" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payments_Users1" Association="Self.FK_Payments_Users1">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Payments" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_Pictures" Association="Self.FK_Users_Pictures">
+            <End Role="Pictures" EntitySet="Pictures" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShipmentGroupMembers_ShipmentGroups" Association="Self.FK_ShipmentGroupMembers_ShipmentGroups">
+            <End Role="ShipmentGroups" EntitySet="ShipmentGroups" />
+            <End Role="ShipmentGroupMembers" EntitySet="ShipmentGroupMembers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShipmentGroupMembers_Users" Association="Self.FK_ShipmentGroupMembers_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="ShipmentGroupMembers" EntitySet="ShipmentGroupMembers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShipmentGroupParcels_ShipmentGroups" Association="Self.FK_ShipmentGroupParcels_ShipmentGroups">
+            <End Role="ShipmentGroups" EntitySet="ShipmentGroups" />
+            <End Role="ShipmentGroupParcels" EntitySet="ShipmentGroupParcels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShipmentGroupParcels_Users" Association="Self.FK_ShipmentGroupParcels_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="ShipmentGroupParcels" EntitySet="ShipmentGroupParcels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShipmentGroups_Users" Association="Self.FK_ShipmentGroups_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="ShipmentGroups" EntitySet="ShipmentGroups" />
+          </AssociationSet>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(GroupShippingModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(GroupShippingModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+        </EntityContainer>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GroupShippingModelStoreContainer" CdmEntityContainer="GroupShippingEntities">
+    <EntitySetMapping Name="Addresses">
+      <EntityTypeMapping TypeName="IsTypeOf(GroupShippingModel.Address)">
+        <MappingFragment StoreEntitySet="Addresses">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ContactPersonTitle" ColumnName="ContactPersonTitle" />
+          <ScalarProperty Name="ContactPersonFirstName" ColumnName="ContactPersonFirstName" />
+          <ScalarProperty Name="ContactPersonSurname" ColumnName="ContactPersonSurname" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="ContactNumber1" ColumnName="ContactNumber1" />
+          <ScalarProperty Name="ContactNumber2" ColumnName="ContactNumber2" />
+          <ScalarProperty Name="FaxNumber" ColumnName="FaxNumber" />
+          <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+          <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+          <ScalarProperty Name="AddressLine3" ColumnName="AddressLine3" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="Verified" ColumnName="Verified" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="IsTypeOf(GroupShippingModel.Country)">
+        <MappingFragment StoreEntitySet="Countries">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Currencies">
+      <EntityTypeMapping TypeName="IsTypeOf(GroupShippingModel.Currency)">
+        <MappingFragment StoreEntitySet="Currencies">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="RateInNZD" ColumnName="RateInNZD" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Items">
+      <EntityTypeMapping TypeName="IsTypeOf(GroupShippingModel.Item)">
+        <MappingFragment StoreEntitySet="Items">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ParcelItems">
+      <EntityTypeMapping TypeName="IsTypeOf(GroupShippingModel.ParcelItem)">
+        <MappingFragment StoreEntitySet="ParcelItems">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ParcelID" ColumnName="ParcelID" />
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="Quantiy" ColumnName="Quantiy" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="PictureID" ColumnName="PictureID" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Parcels">
+      <EntityTypeMapping TypeName="IsTypeOf(GroupShippingModel.Parcel)">
+        <MappingFragment StoreEntitySet="Parcels">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentModes">
+      <EntityTypeMapping TypeName="IsTypeOf(GroupShippingModel.PaymentMode)">
+        <MappingFragment StoreEntitySet="PaymentModes">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payments">
+      <EntityTypeMapping TypeName="IsTypeOf(GroupShippingModel.Payment)">
+        <MappingFragment StoreEntitySet="Payments">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ShipmentGroupMemberID" ColumnName="ShipmentGroupMemberID" />
+          <ScalarProperty Name="ShipmentGroupID" ColumnName="ShipmentGroupID" />
+          <ScalarProperty Name="PayorID" ColumnName="PayorID" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="PaymentModeID" ColumnName="PaymentModeID" />
+          <ScalarProperty Name="PaymentCurrencyID" ColumnName="PaymentCurrencyID" />
+          <ScalarProperty Name="ReceivedBy" ColumnName="ReceivedBy" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pictures">
+      <EntityTypeMapping TypeName="IsTypeOf(GroupShippingModel.Picture)">
+        <MappingFragment StoreEntitySet="Pictures">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ContentType" ColumnName="ContentType" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ShipmentGroupMembers">
+      <EntityTypeMapping TypeName="IsTypeOf(GroupShippingModel.ShipmentGroupMember)">
+        <MappingFragment StoreEntitySet="ShipmentGroupMembers">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="ShipmentGroupID" ColumnName="ShipmentGroupID" />
+          <ScalarProperty Name="ParcelID" ColumnName="ParcelID" />
+          <ScalarProperty Name="IsFacilitator" ColumnName="IsFacilitator" />
+          <ScalarProperty Name="DomesticAddressID" ColumnName="DomesticAddressID" />
+          <ScalarProperty Name="ConsentedOn" ColumnName="ConsentedOn" />
+          <ScalarProperty Name="ShipmentReceivedAtOrigin" ColumnName="ShipmentReceivedAtOrigin" />
+          <ScalarProperty Name="DispatchedDomestically" ColumnName="DispatchedDomestically" />
+          <ScalarProperty Name="DomesticallyReceived" ColumnName="DomesticallyReceived" />
+          <ScalarProperty Name="ShipmentWeight" ColumnName="ShipmentWeight" />
+          <ScalarProperty Name="InternationalShipmentCost" ColumnName="InternationalShipmentCost" />
+          <ScalarProperty Name="DomesticShipmentCost" ColumnName="DomesticShipmentCost" />
+          <ScalarProperty Name="FacilitationFee" ColumnName="FacilitationFee" />
+          <ScalarProperty Name="AppServiceFee" ColumnName="AppServiceFee" />
+          <ScalarProperty Name="TotalPayable" ColumnName="TotalPayable" />
+          <ScalarProperty Name="PayableReceived" ColumnName="PayableReceived" />
+          <ScalarProperty Name="Completed" ColumnName="Completed" />
+          <ScalarProperty Name="LastUpdatedOn" ColumnName="LastUpdatedOn" />
+          <ScalarProperty Name="GoodToGo" ColumnName="GoodToGo" />
+          <ScalarProperty Name="ShareDetailsWithMembers" ColumnName="ShareDetailsWithMembers" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ShipmentGroupParcels">
+      <EntityTypeMapping TypeName="IsTypeOf(GroupShippingModel.ShipmentGroupParcel)">
+        <MappingFragment StoreEntitySet="ShipmentGroupParcels">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ShipmentGroupID" ColumnName="ShipmentGroupID" />
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="ParcelID" ColumnName="ParcelID" />
+          <ScalarProperty Name="ReceivedAtOrigin" ColumnName="ReceivedAtOrigin" />
+          <ScalarProperty Name="DispatchedAtDestination" ColumnName="DispatchedAtDestination" />
+          <ScalarProperty Name="DispatchedDomestically" ColumnName="DispatchedDomestically" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ShipmentGroups">
+      <EntityTypeMapping TypeName="IsTypeOf(GroupShippingModel.ShipmentGroup)">
+        <MappingFragment StoreEntitySet="ShipmentGroups">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FacilitatorID" ColumnName="FacilitatorID" />
+          <ScalarProperty Name="OriginAddressID" ColumnName="OriginAddressID" />
+          <ScalarProperty Name="DestinataionAddressID" ColumnName="DestinataionAddressID" />
+          <ScalarProperty Name="MaximumMembers" ColumnName="MaximumMembers" />
+          <ScalarProperty Name="MaximumWeight" ColumnName="MaximumWeight" />
+          <ScalarProperty Name="TotalODShipmentCost" ColumnName="TotalODShipmentCost" />
+          <ScalarProperty Name="TotalSubShipmentCost" ColumnName="TotalSubShipmentCost" />
+          <ScalarProperty Name="AverageDomesticShipmentCost" ColumnName="AverageDomesticShipmentCost" />
+          <ScalarProperty Name="TotalGroupFacilitationFee" ColumnName="TotalGroupFacilitationFee" />
+          <ScalarProperty Name="TotalAppServiceFee" ColumnName="TotalAppServiceFee" />
+          <ScalarProperty Name="AppServiceFeeReceived" ColumnName="AppServiceFeeReceived" />
+          <ScalarProperty Name="CurrencyID" ColumnName="CurrencyID" />
+          <ScalarProperty Name="MembersCompleted" ColumnName="MembersCompleted" />
+          <ScalarProperty Name="ParcelReceived" ColumnName="ParcelReceived" />
+          <ScalarProperty Name="ExpectedDispatchTime" ColumnName="ExpectedDispatchTime" />
+          <ScalarProperty Name="ParcelDispatched" ColumnName="ParcelDispatched" />
+          <ScalarProperty Name="ExpectedArrivalTime" ColumnName="ExpectedArrivalTime" />
+          <ScalarProperty Name="ParcelArrived" ColumnName="ParcelArrived" />
+          <ScalarProperty Name="Completed" ColumnName="Completed" />
+          <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="IsTypeOf(GroupShippingModel.sysdiagram)">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="IsTypeOf(GroupShippingModel.User)">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="PictureID" ColumnName="PictureID" />
+          <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+          <ScalarProperty Name="Subscribed" ColumnName="Subscribed" />
+          <ScalarProperty Name="Verified" ColumnName="Verified" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

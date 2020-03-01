@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ed7d573d8eaf4631adea7a61a6706638" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="GroupShippingModel.Address" Width="1.5" PointX="3.75" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GroupShippingModel.Country" Width="1.5" PointX="1.5" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GroupShippingModel.Currency" Width="1.5" PointX="6" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GroupShippingModel.Item" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="GroupShippingModel.ParcelItem" Width="1.5" PointX="3" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GroupShippingModel.Parcel" Width="1.5" PointX="8.25" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GroupShippingModel.PaymentMode" Width="1.5" PointX="13.5" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="GroupShippingModel.Payment" Width="1.5" PointX="15.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="GroupShippingModel.Picture" Width="1.5" PointX="0.75" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="GroupShippingModel.ShipmentGroupMember" Width="1.5" PointX="13.5" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="GroupShippingModel.ShipmentGroupParcel" Width="1.5" PointX="10.5" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GroupShippingModel.ShipmentGroup" Width="1.5" PointX="8.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GroupShippingModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GroupShippingModel.User" Width="1.5" PointX="6" PointY="10.375" IsExpanded="true" />
+        <AssociationConnector Association="GroupShippingModel.FK_Addresses_Countries" ManuallyRouted="false" />
+        <AssociationConnector Association="GroupShippingModel.FK_ShipmentGroupMembers_Addresses" ManuallyRouted="false" />
+        <AssociationConnector Association="GroupShippingModel.FK_ShipmentGroups_Addresses" ManuallyRouted="false" />
+        <AssociationConnector Association="GroupShippingModel.FK_ShipmentGroups_Addresses1" ManuallyRouted="false" />
+        <AssociationConnector Association="GroupShippingModel.FK_Users_Addresses" ManuallyRouted="false" />
+        <AssociationConnector Association="GroupShippingModel.FK_Payments_Currencies" ManuallyRouted="false" />
+        <AssociationConnector Association="GroupShippingModel.FK_ShipmentGroups_Currencies" ManuallyRouted="false" />
+        <AssociationConnector Association="GroupShippingModel.FK_ParcelItems_Items" ManuallyRouted="false" />
+        <AssociationConnector Association="GroupShippingModel.FK_ParcelItems_Parcels" ManuallyRouted="false" />
+        <AssociationConnector Association="GroupShippingModel.FK_ParcelItems_Pictures" ManuallyRouted="false" />
+        <AssociationConnector Association="GroupShippingModel.FK_ParcelItems_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="GroupShippingModel.FK_Parcels_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="GroupShippingModel.FK_ShipmentGroupMembers_Parcels" ManuallyRouted="false" />
+        <AssociationConnector Association="GroupShippingModel.FK_ShipmentGroupParcels_Parcels" ManuallyRouted="false" />
+        <AssociationConnector Association="GroupShippingModel.FK_Payments_PaymentModes" ManuallyRouted="false" />
+        <AssociationConnector Association="GroupShippingModel.FK_Payments_ShipmentGroupMembers" ManuallyRouted="false" />
+        <AssociationConnector Association="GroupShippingModel.FK_Payments_ShipmentGroups" ManuallyRouted="false" />
+        <AssociationConnector Association="GroupShippingModel.FK_Payments_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="GroupShippingModel.FK_Payments_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="GroupShippingModel.FK_Users_Pictures" ManuallyRouted="false" />
+        <AssociationConnector Association="GroupShippingModel.FK_ShipmentGroupMembers_ShipmentGroups" ManuallyRouted="false" />
+        <AssociationConnector Association="GroupShippingModel.FK_ShipmentGroupMembers_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="GroupShippingModel.FK_ShipmentGroupParcels_ShipmentGroups" ManuallyRouted="false" />
+        <AssociationConnector Association="GroupShippingModel.FK_ShipmentGroupParcels_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="GroupShippingModel.FK_ShipmentGroups_Users" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
